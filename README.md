@@ -331,6 +331,22 @@ response["data"]["id"]
 response["data"]["name"]
 ```
 
+## Retrieve category list
+Get all category
+See details [here](https://docs.uiza.io/?shell#retrieve-category-list).
+
+```ruby
+require "uiza"
+require "json"
+
+Uiza.workspace_api_domain = "your-workspace-api-domain.uiza.co"
+Uiza.authorization = "your-authorization"
+
+response = Uiza::Category.list limit: 5
+response = JSON.parse response
+response["data"].first["id"]
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
